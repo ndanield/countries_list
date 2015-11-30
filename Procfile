@@ -1,1 +1,1 @@
-web: gunicorn --log-file =- paises.wsgi:application
+web: gunicorn --log-file =- listCountries.wsgi:application

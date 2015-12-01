@@ -1,5 +1,10 @@
 from django.shortcuts import render
 from .models import Country
+from django_tables2 import RequestConfig
+from .tables import CountryTable
 
 def country(request):
-	return render(request, 'countries/country.html', {"country": Country.objects.all()})
+	#"country": Country.objects.all()
+	table = CountryTable(Country.objects.all())
+	RequestConfig(request).configure(table)
+	return render(request, 'countries/country.html', {'table': table})

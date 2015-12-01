@@ -7,4 +7,4 @@ def country(request):
 	#"country": Country.objects.all()
 	table = CountryTable(Country.objects.all())
 	RequestConfig(request).configure(table)
-	return render(request, 'countries/templates/countries/country.html', {'table': table})
+	return render(request, 'country.html', {'table': table})
